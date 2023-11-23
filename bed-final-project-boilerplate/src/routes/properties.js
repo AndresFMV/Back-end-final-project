@@ -10,12 +10,12 @@ const router = Router();
 
 router.get("/", async (req, res, next) => {
     try {
-        let properties = await getProperties();
-        // Convert pricePerNight to a number
+        const { location, pricePerNight, amenities } = req.query
+        let properties = await getProperties(location, pricePerNight, amenities);
         properties = properties.map(property => ({
             ...property,
-            pricePerNight: parseFloat(property.pricePerNight),
-        }));
+            pricePerNight: parseFloat(property.pricePerNight)
+        }))
         res.json(properties);
     } catch (error) {
         next(error);

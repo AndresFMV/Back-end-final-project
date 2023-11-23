@@ -28,7 +28,7 @@
     "@types/jsonwebtoken": "^9.0.4",
     "newman": "^6.0.0",
     "nodemon": "^3.0.1",
-    "prisma": "^5.4.2"
+    "prisma": "^5.6.0"
   },
   "engines": {
     "node": ">=18 <19"
